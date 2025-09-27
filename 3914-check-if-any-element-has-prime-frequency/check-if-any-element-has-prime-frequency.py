@@ -5,7 +5,7 @@ class Solution:
         dict_seen={}
         for num in nums:
             dict_seen[num]=1+dict_seen.get(num,0)
-       
+
         for count in dict_seen.values():
             if count<2:
                 continue
