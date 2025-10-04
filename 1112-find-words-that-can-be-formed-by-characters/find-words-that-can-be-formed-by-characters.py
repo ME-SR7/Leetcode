@@ -4,7 +4,11 @@ class Solution:
         total=0
         for word in words:
             word_counter=Counter(word)
-            if all(word_counter[ch]<=chars_counter[ch] for ch in word_counter):
+            word_form=True
+            for ch in word_counter:
+                if word_counter[ch]>chars_counter[ch]:
+                    word_form=False
+            if word_form:
                 total+=len(word)
             
         return total        
